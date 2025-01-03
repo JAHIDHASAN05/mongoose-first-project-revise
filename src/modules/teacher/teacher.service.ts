@@ -9,6 +9,12 @@ const createTeacher =async(teacher:TTeacher)=>{
     return result
 }
 
+const getAllTeacherFromDb = async ()=>{
+    const result= await TeacherModal.find()
+    return result
+}
+      
 export const TeacherService ={
-    createTeacher
+    createTeacher,
+    getAllTeacherFromDb
 }
