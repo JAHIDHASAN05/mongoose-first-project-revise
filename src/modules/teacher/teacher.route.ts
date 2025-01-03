@@ -6,6 +6,7 @@ const router = express.Router()
 
 router.post('/create-teacher', teacherController.createTeacher)
 router.get('/',teacherController.getAllTeacher)
+router.get('/:teacherId', teacherController.getAsingleTeacher)
 
 
 

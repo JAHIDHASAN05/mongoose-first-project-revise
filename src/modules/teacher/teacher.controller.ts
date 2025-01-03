@@ -37,8 +37,22 @@ const getAllTeacher = async(req:Request, res:Response)=>{
 
 }
 
+const getAsingleTeacher = async (req:Request, res:Response)=>{
+    try{
+        const teacherId= req.params.teacherId;
+        const result = await  TeacherService.getAsingleTeacherFromDB(teacherId)
+        res.status(200).json({
+            success: true, 
+            message: "Teacher is retrieve succesfully",
+            data: result
+        })
+    }catch(err){
+        console.log(err);
+    }
+}
 
 export const teacherController={
     createTeacher,
-    getAllTeacher
+    getAllTeacher,
+    getAsingleTeacher
 }

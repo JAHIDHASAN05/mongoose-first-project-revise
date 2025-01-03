@@ -13,8 +13,14 @@ const getAllTeacherFromDb = async ()=>{
     const result= await TeacherModal.find()
     return result
 }
+
+const getAsingleTeacherFromDB = async (teacherId:string)=>{
+    const result = await TeacherModal.findOne({id:teacherId})
+    return result
+}
       
 export const TeacherService ={
     createTeacher,
-    getAllTeacherFromDb
+    getAllTeacherFromDb,
+    getAsingleTeacherFromDB
 }
