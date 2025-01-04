@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 
 
 
@@ -25,6 +26,7 @@ export interface IGuardian {
   
   export interface IStudent {
     id: string;
+    user:Types.ObjectId,
     name: IUserName;
     email: string;
     gender: "male" | "female";

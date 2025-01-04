@@ -32,6 +32,7 @@ const localGuardianSchema= new Schema<ILocalGuardian>({
 
 const StudentScema= new Schema<IStudent>({
     id: {type:String, required :false},
+    user:Schema.Types.ObjectId,
     name:UserNameSchema,
     gender:['female' , "male"],
     dateOfBirth :{type:String},
