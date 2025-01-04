@@ -26,7 +26,7 @@ const getAllTeacher = async(req:Request, res:Response)=>{
         const result = await TeacherService.getAllTeacherFromDb()
         res.status(200).json({
             success: true,
-            message: "Teacher is created successfully",
+            message: "Teacher are retrieve successfully",
             data: result
         })
         

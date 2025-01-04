@@ -4,10 +4,12 @@ const port = 3000
 import cors from 'cors'
 import { StudentRoutes } from './modules/student/student.route'
 import { TeacherRoutes } from './modules/teacher/teacher.route'
+import { userRoutes } from './modules/users/user.route'
 app.use(express.json())
 app.use(cors())
 
 app.use('/api/v1/student', StudentRoutes)
+app.use('/api/v1/user', userRoutes)
 
 app.use('/api/v1/teacher', TeacherRoutes)
 
