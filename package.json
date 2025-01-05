@@ -1,18 +1,17 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.9.3",
     "zod": "^3.24.1"
   },
   "scripts": {
-    "start": "node dist/server.js",
-    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node init && node dist/server.js",
+    "start:dev": "node init && ts-node-dev --respawn --transpile-only src/server.ts",
     "lint": "eslint src --ignore-pattern .eslintignore --c .ts",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "dev": "ts-node-dev src/index.ts",
-    "build": "tsc"
+    "dev": "node init && ts-node-dev src/index.ts",
+    "build": "node init && tsc"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

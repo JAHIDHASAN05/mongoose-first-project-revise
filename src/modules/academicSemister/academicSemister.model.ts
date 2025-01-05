@@ -20,6 +20,9 @@ academicSemisterSchema.pre('save', async function(next){
         semisterName: this.semisterName
     })
     if(isSemisterExist){
+        
+
+        console.log(`${this.semisterName} in this ${this.year} year is already exist !`);              
         throw new Error(`${this.semisterName} in this ${this.year} year is already exist !`);              
     }
     next()
